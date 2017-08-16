@@ -1,0 +1,33 @@
+{% extends './layout.html' %}
+{% block content %}
+<div>
+
+  <h1>Hotels:</h1>
+  <select name="hotels" id="hotels" class="form-control">
+  {% for name in hotels %}
+  <option value="{{name}}">{{ name }}</option>
+  {% endfor %}
+  </select>
+  
+  <h1>Activities:</h1>
+  <select name="activities" id="activities">
+  {% for name in activities %}
+    <option value="{{name}}">{{ name }}</option>
+  {% endfor %}
+  </select>
+  
+  <h1>Places:</h1>
+  <select name="places" id="places">
+  {% for address in places %}
+    <option value="{{address}}">{{ address }}</option>
+  {% endfor %}
+  </select>
+  
+  <h1>Restaurants:</h1>
+  <select name="restaurants" id="restaurants">
+  {% for name in restaurants %}
+    <option value="{{name}}">{{ name }}</option>
+  {% endfor %}
+  </select>
+</div>
+{% endblock %}
