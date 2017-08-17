@@ -5,18 +5,26 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "DATABASE_URL=postgres://localhost/tripplanner_db nodemon app.js"
+    "start:dev": "DATABASE_URL=postgres://localhost/tripplanner_db nodemon -e html,css,js app.js",
+    "build:css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.15.4",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.2.1",
     "morgan": "^1.8.2",
     "nunjucks": "^3.0.1",
     "pg": "^7.1.0",
     "sequelize": "^4.4.2",
     "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0"
   }
 }

@@ -11,6 +11,9 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
+app.use('/jquery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
+
 
 app.use(morgan('dev'));
 
@@ -61,9 +64,11 @@ app.use((err, req, res, next)=> {
 
 const port = process.env.PORT || 3000;
 models.sync()
+  .then( ()=> {
+    return require('./seed'); //this is why we got the error: ConnectionManager.getConnection was called after the connection manager was closed!
+   })
   .then(()=> {
     app.listen(port, ()=> {
       console.log(`listening on port ${port}`);
-      require('./seed');
     });
   });

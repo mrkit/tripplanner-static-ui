@@ -87,6 +87,6 @@ db.sync({force: true})
   console.error('There was totally a problem', err, err.stack);
 })
 .finally(function () {
-//  db.conn.close(); // creates but does not return a promise
-//  return null; // stops bluebird from complaining about un-returned promise
+  db.conn.close(); // creates but does not return a promise
+  return null; // stops bluebird from complaining about un-returned promise
 });

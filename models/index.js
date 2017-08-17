@@ -1,8 +1,5 @@
 const Sequelize = require('sequelize');
-
-const conn = new Sequelize(process.env.DATABASE_URL);
-
-const Foo = conn.define('foo', {});
+const conn = new Sequelize(process.env.DATABASE_URL, { logging: false });
  
 const Place = conn.define('place', {
   address: Sequelize.STRING,

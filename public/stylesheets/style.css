@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  font-weight: 100;
+  margin: 0; }
+
+h1, h3 {
+  font-weight: 100; }
+
+header {
+  margin: 0;
+  padding: 10px;
+  background: #ffff9a;
+  box-shadow: 1px 2px 1px #ccc8c8; }
+
+header h1 {
+  margin: 0 auto; }
+
+#travel {
+  /*  border: 1px solid black;*/
+  background: #b7fdf3;
+  width: 320px;
+  height: 280px;
+  margin-top: 3px;
+  padding: 1px 1px 20px 20px;
+  box-shadow: 1px 2px 1px #ccc8c8;
+  text-align: justify; }
+
+select {
+  width: 300px;
+  height: 23px;
+  font-size: 16px; }
